@@ -1,0 +1,44 @@
+### Get all items (should require auth)
+GET http://localhost:5133/items
+Authorization: Bearer mysecrettoken
+
+###
+
+### Create a new item
+POST http://localhost:5133/items
+Authorization: Bearer mysecrettoken
+Content-Type: application/json
+
+"First item"
+
+###
+
+### Get a single item by ID
+GET http://localhost:5133/items/0
+Authorization: Bearer mysecrettoken
+
+###
+
+### Update an item
+PUT http://localhost:5133/items/0
+Authorization: Bearer mysecrettoken
+Content-Type: application/json
+
+"Updated item"
+
+###
+
+### Delete an item
+DELETE http://localhost:5133/items/0
+Authorization: Bearer mysecrettoken
+
+###
+
+### Unauthorized request (should return 401)
+GET http://localhost:5133/items
+
+###
+
+### Trigger error (invalid ID)
+GET http://localhost:5133/items/999
+Authorization: Bearer mysecrettoken
